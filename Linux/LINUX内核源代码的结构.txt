@@ -1,0 +1,104 @@
+LINUX内核源代码的结构（转）
+源代码所有在目录：/usr/src/linux (大部分linux发行版本中)
+ init 内核初始化代码 
+ kernel 内核核心部分：进程、定时、程序执行、信号、模块。。。 
+ mm 内存处理 
+ arch 平台相关代码 
+    i386 IBM的PC体系结构 
+       kernel 内核核心部分 
+       mm 内存管理 
+       math-emu 浮点单元软件仿真 
+       lib 硬件相关工具函数 
+       boot 引导程序 
+          compressed 压缩内核处理 
+          tools 生成压缩内核映像的程序 
+    alpha 康柏的Alpha体系结构 
+    s390 IBM的System/390体系结构 
+    sparc Sun的SPARC体系结构 
+   sparc64 Sun的Ultra-SPARC体系结构 
+    mips SGI的MIPS体系结构 
+    ppc Motorola-IBM的基于PowerPC的体系结构 
+    m68k Motorola的基于MC680x0的体系结构 
+    arm 基于ARM处理器的体系结构 
+ fs 文件系统 
+    proc /proc虚拟文件系统 
+    devpts /dev/pts虚拟文件系统 
+    ext2 Linux本地的Ext2文件系统 
+    isofs ISO9660文件系统（CD-ROM） 
+    nfs 网络文件系统（NFS） 
+    nfsd 集成的网络文件系统服务器 
+    fat 基于FAT的文件系统的通用代码 
+    msdos 微软的MS-DOS文件系统 
+    vfat 微软的Windows文件系统（VFAT） 
+    nls 本地语言支持 
+    ntfs 微软的Windows NT文件系统 
+    smbfs 微软的Windows服务器消息块（SMB）文件系统 
+    umsdos UMSDOS文件系统 
+    minix MINIX文件系统 
+    hpfs IBM的OS/2文件系统 
+    sysv SystemV、SCO、Xenix、Coherent和Version7文件系统 
+    ncpfs Novell的Netware核心协议（NCP0 
+    ufs UnixBSD、SunOs、FreeBSD、NetBSD、OpenBSD和NeXTStep文件系统 
+    affs Amiga的快速文件系统（FFS） 
+    coda Coda网络文件系统 
+    hfs 苹果的Macintosh文件系统 
+    adfs Acorn磁盘填充文件系统 
+    efs SGI IRIX的EFS文件系统 
+    qnx4 QNX4 OS使用不的文件系统 
+    romfs 只读小文件系统 
+    autofs 目录自动装载程序的支持 
+    lockd 远程文件锁定的支持 
+ Net 网络代码 
+ Ipc System V的进程间通信 
+ Drivers 设备驱动程序 
+    block 块设备驱动程序 
+       paride 从并口访问IDE设备的支持 
+    scsi SCSI设备驱动程序 
+    char 字符设备驱动程序 
+       joystick 游戏杆 
+       ftape 磁带流设备 
+       hfmodem 无线电设备 
+       ip2 IntelliPort的多端口串行控制器 
+    net 网卡设备 
+    sound 音频卡设备 
+    video 视频卡设备 
+    cdrom 专用CD-ROM设备（除ATAPI和SCSI之外） 
+    isd0n ISDN设备 
+    apl000 富士的AP1000设备 
+    macintosh 苹果的Macintosh设备 
+    sgi SGI的设备 
+    fc4 光纤设备 
+    acorn Acorn的设备 
+    misc 杂项设备 
+    pnp 即插即用的支持 
+    usb 通用串行总线（USB）的支持 
+    pci PCI总线的支持 
+    sbus Sun的SPARC SBus的支持 
+    nubus 苹果的Macintosh Nubus的支持 
+    zorro Amiga的Zorro总线的支持 
+    dio 惠普的HP300 DIO总线的支持 
+    tc Sun的TurboChannel支持（尚未完成） 
+ Lib 通用内核函数 
+ Include 头文件（.h） 
+    linux 内核核心部分 
+       lockd 远程文件加锁 
+       nfsd 集成的网络文件服务器 
+       sunrpc Sun的远程过程调用 
+       byteorder 字节交换函数 
+       modules 模块支持 
+    asm-generic 平台无关低级头文件 
+    asm-i386 IBM的PC体系结构 
+    asm-alpha 康柏的Alpha体系结构 
+    asm-mips SGI的MIPS体系结构 
+    asm-m68k Motorola-IBM的基于PowerPC的体系结构 
+    asm-ppc Motorola-IBM的PowerPC体系结构 
+    asm-s390 IBM的System/390体系结构 
+    asm-sparc Sun的SPARC体系结构 
+    asm-sparc64 Sun的Ultra-SPARC体系结构 
+    asm-arm 基于ARM处理器的体系结构 
+    net 网络 
+    scsi SCSI支持 
+    video 视频卡支持 
+    config 定义内核配置的宏所在的头文件 
+ scripts 生成内核映像的外部程序 
+ Documentation有关内核各个部分的通用解释和注释的文本文件
