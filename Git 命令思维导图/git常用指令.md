@@ -161,7 +161,7 @@ git reset --hard commit id
 3
 4
 git config
-??git config命令的作用是配置git的相关信息。
+git config命令的作用是配置git的相关信息。
 
 配置全局的用户名和邮箱，mac下可通过终端输入命令cat ~/.gitconfig查看配置信息。
 设置用户名：git config --global user.name "name"
@@ -180,10 +180,11 @@ git config --global alias.br branch：则git branch可用git br代替
 也可以自定义其他命令的别名，主要合理且方便操作即可。
 
 git init
-??git init命令的作用是在当前目录中初始化仓库，并且创建一个名为.git的子目录，该目录含有你初始化的Git仓库中所有的必须文件。
+git init命令的作用是在当前目录中初始化仓库，并且创建一个名为.git的子目录，该目录含有你初始化的Git仓库中所有的必须文件。
 
 git status
-??git status命令的作用是显示文件状态，红色表示工作目录的文件被修改但还没有提交到暂存区，绿色表示已经提交到暂存区。
+git status命令的作用是显示文件状态，
+红色表示工作目录的文件被修改但还没有提交到暂存区，绿色表示已经提交到暂存区。
 
 以极简的方式显示文件状态：git status -s
 A：本地新增的文件（服务器上没有）
@@ -198,7 +199,7 @@ X：未知状态(很可能是遇到git的bug了，你可以向git提交bug report)
 已经被修改但还没提交到暂存区的文件，可以通过命令git checkout -- fileName撤销更改。
 
 git add
-??git add命令的作用是将文件从工作目录添加至暂存区
+git add命令的作用是将文件从工作目录添加至暂存区
 
 把所有修改的信息添加到暂存区：git add .
 把所有跟踪文件中被修改过或已删除的文件信息添加至暂存区：git add -u或git add --update，它不会处理那些没有被跟踪的文件
@@ -210,7 +211,7 @@ git add -A无论在哪个目录执行都会提交相应文件。
 已经被提交到暂存区的文件，可以通过命令git reset HEAD -- fileName撤销提交。
 
 git commit
-??git commit命令的作用是将暂存区的修改提交到本地仓库，同时会生成一个commmit-id。
+git commit命令的作用是将暂存区的修改提交到本地仓库，同时会生成一个commmit-id。
 
 将暂存区的修改提交到本地仓库：git commit -m "message"，"message"是本次提交的简述内容，比如添加新功能或修复bug等
 将本地工作区中修改后还未使用git add .命令添加到暂存区中的文件也提交到本地仓库：git commit –a –m "message"，该命令相当于以下两条命令：
@@ -218,7 +219,7 @@ git add .：把所有修改的信息添加到暂存区
 git add -m "message"：将暂存区的修改提交到本地仓库
 修改最后一次提交（可用于漏掉某个文件的提交或重新编辑信息）：git commit --amend
 git pull
-??git pull命令的作用是获取远程主机某个分支的更新，再与本地指定分支合并。git pull <远程主机名><远程分支名>:<本地分支名>
+git pull命令的作用是获取远程主机某个分支的更新，再与本地指定分支合并。git pull <远程主机名><远程分支名>:<本地分支名>
 
 取回远程主机上的dev分支与本地的master分支合并：git pull origin dev:master
 取回远程主机上的dev分支与当前分支合并：git pull origin dev，该命令相当于以下两条命令：
@@ -227,17 +228,17 @@ git merge origin/dev：当前分支合并dev分支
 注意：通过git fetch所取回的更新，在本地主机上需要用“远程主机名/分支名”的形式读取，比如origin主机的master分支，就需要用origin/master来读取。
 
 git fetch
-??git fetch命令的作用是将远程主机上所有分支的更新取回本地，并记录在.git/FETCH_HEAD中
+git fetch命令的作用是将远程主机上所有分支的更新取回本地，并记录在.git/FETCH_HEAD中
 
 获取远程主机上master分支的代码：git fetch origin
 在本地新建test分支，并将远程主机上master分支代码下载到本地test分支：git fetch origin master:test
 git push
-??git push命令的作用是将本地分支的更新推送到远程主机上。
+git push命令的作用是将本地分支的更新推送到远程主机上。
 
 将本地master分支的更新推送到远程主机上：git push origin master
 删除远程dev分支：git push origin --delete dev
 git branch
-??git branch命令的作用主要是做分支管理操作。
+git branch命令的作用主要是做分支管理操作。
 
 查看本地分支：git branch
 查看本地和远程分支：git branch -a
@@ -248,7 +249,7 @@ git branch
 以上命令都是针对本地仓库操作，不影响远程仓库。
 
 git checkout
-??git checkout命令最常用的情形是创建和切换分支以及撤销工作区的修改。
+git checkout命令最常用的情形是创建和切换分支以及撤销工作区的修改。
 
 切换到tag为v1.0.0时对应的代码：git checkout v1.0.0
 在tag为v1.0.0的基础上创建分支名为test的分支：git checkout -b test v1.0.0。该命令相当于以下两条命令：
@@ -257,13 +258,13 @@ git checkout v1.0.0：切换到分支test
 把当前目录所有修改的文件从HEAD中移除并且把它恢复成未修改时的样子：git checkout .
 撤销工作目录中文件的修改（文件有改动但还未git add）：git checkout -- fileName，或者撤销所有修改使用git checkout .
 git tag
-??git tag命令主要是对项目标签进行管理。
+git tag命令主要是对项目标签进行管理。
 
 查看已有的标签历史记录：git tag
 给当前最新的commit打上标签：git tag <标签的定义>
 给对应的commit id打上标签：git tag <标签定义> <commit id>
 git log
-??git log命令的作用是查看历史提交记录
+git log命令的作用是查看历史提交记录
 
 查看历史提交记录：git log
 将每条历史提交记录展示成一行：git log --oneline
@@ -274,7 +275,7 @@ git log
 显示某个日期之前的记录：git log --after="2018-10-1，包含2018年10月1号的记录
 显示某两个日期之间的记录：git log --after="2018-10-1" --before="2018-10-7"
 git reset
-??git reset命令的作用是撤销暂存区的修改或本地仓库的提交。
+git reset命令的作用是撤销暂存区的修改或本地仓库的提交。
 
 撤销已经提交到暂存区的文件（已经git add但还未git commit）:
 撤销已经提交到暂存区的文件：git reset HEAD fileName或git reset --mixed HEAD fileName
@@ -286,7 +287,7 @@ git reset
 注意：commit-id可通过git log查看（取前六位即可），HEAD~1表示前一次提交（可以此类推）。
 
 git remote
-??git remote命令的作用主要是管理远程仓库。
+git remote命令的作用主要是管理远程仓库。
 
 查看关联的远程仓库的名称：git remote
 查看关联的远程仓库的详细信息：git remote -v
@@ -295,12 +296,12 @@ git remote
 修改远程仓库的关联：git remote set-url origin <新的远程仓库地址>
 更新远程仓库的分支：git remote update origin --prune
 git merge
-??git merge命令的作用主要是分支的合并。
+git merge命令的作用主要是分支的合并。
 
 1：如果当前是master分支，需要合并dev分支：git merge dev
 
 git stash
-??git stash命令的作用主要如果当前分支所做的修改你还不想提交，但又需要切换到其他分支去查看，就可以使用git stash保存当前的修改。
+git stash命令的作用主要如果当前分支所做的修改你还不想提交，但又需要切换到其他分支去查看，就可以使用git stash保存当前的修改。
 
 保存当前进度：git stash
 查看已经保存的历史记录：git stash list
